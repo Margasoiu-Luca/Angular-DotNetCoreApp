@@ -1,0 +1,57 @@
+
+<main *ngIf="(exists&&producator!==undefined)||!exists; else elseBlock" class="container mt-4">
+    <h1>Informatii despre producatorul selectat</h1>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Producatorul {{producator.nume}}</h2>
+
+        <div class="form-group">
+          <label for="address">Status:</label>
+          <input disabled type="text" class="form-control" id="address" >
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <h2>Informatii:</h2>
+          <div class="form-group">
+            <label for="address">Adresa:</label>
+            <input type="text" class="form-control" id="address" [(ngModel)]="producator.adresa">
+          </div>
+          <div class="form-group">
+            <label for="phone">Nume</label>
+            <input type="text" class="form-control" id="phone" [(ngModel)]="producator.nume">
+          </div>
+          <div class="form-group">
+            <label for="datetime">Data Inceput:</label>
+            <input [(ngModel)]="producator.dataInceput" type="datetime-local" class="form-control" id="datetime" />
+          </div>
+          <div class="form-group">
+            <label for="datetime">Data Inceput:</label>
+            <input [(ngModel)]="producator.dataSfarsit" type="datetime-local" class="form-control" id="datetime2" />
+          </div>
+          <div *ngIf="exists; else elseBlock2">
+            <button (click)="onSave()" class="btn btn-primary mt-3">Salveaza schimbarile</button>
+            <button (click)="onDelete($event)" class="btn btn-danger mt-3">Delete</button>
+          </div>
+          <div>
+            <ng-template #elseBlock2>
+              <div>
+                <button (click)="onCreate()" class="btn btn-primary mt-3">Adauga</button>
+              </div>
+            </ng-template>
+          </div>
+      </div>
+    </div>
+  </main>
+  <ng-template #elseBlock>
+
+    <div class="centered-div">
+        <div class="spinner-border" role="status" style="width: 10rem;height: 10rem;"></div>
+          <span class="sr-only ml-3">  Loading...</span>
+    </div>
+
+  </ng-template>
+
+
+  

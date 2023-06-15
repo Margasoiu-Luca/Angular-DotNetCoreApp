@@ -1,0 +1,47 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Adresa</th>
+        <th scope="col">Data Inceput</th>
+        <th scope="col">Data Sfarsit</th>
+        <th scope="col">Nume</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor=" let producator of data; index as i">
+        <th  scope="row">{{i+1}}</th>
+        <td>
+          <a [routerLink]="['/producatori',producator.producatorId]" >{{producator.adresa}} </a>
+          </td>
+        <td>{{producator.dataInceput}} </td>
+        <td>{{producator.dataSfarsit}} </td>
+        <td> {{producator.nume}}</td>
+        
+
+      </tr>
+      <!-- <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+        <td>@twitter</td>
+      </tr> -->
+          <button class="btn btn-primary mt-3 "[routerLink]="['/producatori/create']">Creaza</button>
+    </tbody>
+  </table>
+<!-- <div *ngFor="let producator of Producatori">{{producator}}</div>  -->
