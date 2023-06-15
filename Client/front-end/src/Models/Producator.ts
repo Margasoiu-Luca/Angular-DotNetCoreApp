@@ -15,5 +15,11 @@ export class Producator {
     uCalculator: string
     uUtilizator: string
     rv: string
+    /**
+     *
+     */
+    constructor() {
+      this.mmId=0;
+    }
   }
   
